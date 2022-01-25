@@ -6,7 +6,6 @@ import WeatherIconFunc from '../../hooks/weatherDetailIcon';
 import unixConverter from '../../utility/unixConverter';
 
 export const Box = styled.div`
-  background: ${(props) => props.theme.detailBackground};
   display: flex;
   box-pack: center;
   justify-content: center;
@@ -17,13 +16,14 @@ export const Box = styled.div`
   min-height: 100vh;
   padding: 2rem 0;
   width: 100vw;
+  background: ${(props) => props.theme.detailBackground};
 `;
 
 const GradientCircle = styled.div`
   position: absolute;
+  z-index: 1;
   top: -10%;
   right: 0;
-  z-index: 1;
   width: 100rem;
   height: 100rem;
   border-radius: 50%;
@@ -41,47 +41,46 @@ const BackBtnStyled = styled.div`
 `;
 
 export const DetailCard = styled.section`
-  background: linear-gradient(180deg, #8782d0 35%, rgba(255, 177, 190, 1) 100%);
-  border-radius: 1rem;
   position: relative;
   z-index: 3;
   justify-items: center;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #8782d0 35%, rgba(255, 177, 190, 1) 100%);
 `;
 
 const CardHeaderContainer = styled.section`
-  width: 100%;
   position: relative;
+  display: block;
   overflow: hidden;
+  object-fit: cover;
+  height: 510px;
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
   section {
     display: block;
   }
-  height: 510px;
-  border-radius: 1rem 1rem 0 0;
-  position: relative;
-  object-fit: cover;
-  display: block;
 `;
 
 const HeaderContentWrapper = styled.div`
   position: absolute;
   z-index: 2;
-  color: ${(props) => props.theme.text};
-  top: 3rem;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
+  top: 3rem;
   width: 100%;
+  color: ${(props) => props.theme.text};
 `;
 
 const TodayWeatherContainer = styled.div`
-  asign-self: center;
-  justify-self: center;
   display: grid;
-  width: 100%;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
   grid-template-rows: 3fr 1fr;
   grid-template-columns: 1fr;
-  justify-items: center;
   grid-gap: 2rem;
+  width: 100%;
 `;
 const TempStateContainer = styled.div`
   display: flex;
@@ -145,18 +144,18 @@ const HumWindSeparator = styled.div`
   margin: 0 2rem;
   width: 2px;
   height: 2.8rem;
-  background-color: ${(props) => props.theme.text}; ;
+  background-color: ${(props) => props.theme.text};
 `;
 
 const WindContainer = styled.div`
   display: flex;
+  flex-flow: column;
+  align-items: center;
   box-orient: vertical;
   box-direction: normal;
-  flex-flow: column;
   box-pack: center;
-  justify-content: center;
   box-align: center;
-  align-items: center;
+  justify-content: center;
 `;
 
 const WindText = styled.span`
@@ -200,21 +199,20 @@ const PictureContainer = styled.div`
   padding: 1em;
   img {
     width: 100%;
-    //height: 100%;
   }
 `;
 
 const BodyContentWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr;
+  grid-column-gap: 1rem;
   justify-items: center;
-  box-pack: center;
   justify-content: center;
   align-content: start;
-  box-align: start;
   align-items: start;
+  box-pack: center;
+  box-align: start;
   box-sizing: border-box;
-  grid-column-gap: 1rem;
   width: 100%;
   padding: 2rem;
   color: ${(props) => props.theme.text};
@@ -237,14 +235,14 @@ const SmallPictureContainer = styled.div`
 
 const DayWeatherContainer = styled.div`
   display: flex;
+  flex-flow: column;
   box-orient: vertical;
   box-direction: normal;
-  flex-flow: column;
-  margin: 2rem 1.5rem;
   box-pack: center;
-  justify-content: center;
   box-align: center;
   align-items: center;
+  justify-content: center;
+  margin: 2rem 1.5rem;
 `;
 
 const WeatherDetail = ({ match }) => {

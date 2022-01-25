@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as BackBtn } from '../../assets/svgs/backBtn.svg';
 import WeatherDetailFunc from '../../hooks/useWeatherDetail';
 import WeatherIconFunc from '../../hooks/weatherDetailIcon';
+import weatherWeekIconFunc from '../../hooks/weatherWeekIconFunc';
 import unixConverter from '../../utility/unixConverter';
 
 export const Box = styled.div`
@@ -314,7 +315,7 @@ const WeatherDetail = ({ match }) => {
                       <SmallPictureContainer>
                         {data && (
                           <img
-                            src={WeatherIconFunc(day.weather[0].main)}
+                            src={weatherWeekIconFunc(day.weather[0].main)}
                             alt=""
                           />
                         )}

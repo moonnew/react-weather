@@ -10,7 +10,7 @@ export const useAddCity = () => {
 
   const addCity = async (name) => {
     const key = process.env.REACT_APP_OPENWEATHER_KEY;
-    const keyWord = name.split(',')[0];
+    const keyWord = name.includes(',') ? name.split(',')[0] : name;
     const url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&q=${keyWord}`;
 
     console.log(keyWord.toLowerCase);

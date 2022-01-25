@@ -69,7 +69,7 @@ const HeaderContentWrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   top: 3rem;
   width: 100%;
-  color: ${(props) => props.theme.text};
+  color: #ffffff;
 `;
 
 const TodayWeatherContainer = styled.div`
@@ -144,7 +144,7 @@ const HumWindSeparator = styled.div`
   margin: 0 2rem;
   width: 2px;
   height: 2.8rem;
-  background-color: ${(props) => props.theme.text};
+  background-color: #ffffff;
 `;
 
 const WindContainer = styled.div`
@@ -183,7 +183,7 @@ const CityNameUnderline = styled.div`
   background: 0 0;
   border-radius: 5px;
   height: 5px;
-  box-shadow: 0 3rem 0 0 ${(props) => props.theme.text};
+  box-shadow: 0 3rem 0 0 #ffffff;
 `;
 
 const CityNameText = styled.span`
@@ -215,7 +215,7 @@ const BodyContentWrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
   padding: 2rem;
-  color: ${(props) => props.theme.text};
+  color: #ffffff;
 `;
 
 const ForecastContainer = styled.div`
